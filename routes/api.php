@@ -15,8 +15,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+    return $request->User();
 });
+// Route::get('/verified-only', function(Request $request){
+
+//     dd('your are verified', $request->User()->name);
+// })->middleware('auth:api','verified');
+
+
+// Route::get('/email/resend', 'App\Http\Controllers\VerificationController@resend')->name('verification.resend');
+
+// Route::get('/email/verify/{id}/{hash}', 'App\Http\Controllers\VerificationController@verify')->name('verification.verify');
 
 Route::group([
 
@@ -33,6 +42,8 @@ Route::group([
     Route::post('me', 'AuthController@me');
     Route::post('sendPasswordResetLink', 'ResetPasswordController@sendEmail');
     Route::post('resetPassword', 'ChangePasswordController@process');
-
+    Route::get('getUtilisateurById','AuthController@getUtilisateurById');
+    Route::get('updateUtilisateur','AuthController@updateUtilisateur');
+    Route::get('deleteUtilisateur','AuthController@deleteUtilisateur');
 
 });
