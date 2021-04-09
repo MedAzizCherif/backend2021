@@ -14,9 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::get('/user', function (Request $request) {
     return $request->User();
 });
+
+
+
+
 // Route::get('/verified-only', function(Request $request){
 
 //     dd('your are verified', $request->User()->name);
@@ -42,8 +46,38 @@ Route::group([
     Route::post('me', 'AuthController@me');
     Route::post('sendPasswordResetLink', 'ResetPasswordController@sendEmail');
     Route::post('resetPassword', 'ChangePasswordController@process');
-    Route::get('getUtilisateurById','AuthController@getUtilisateurById');
-    Route::get('updateUtilisateur','AuthController@updateUtilisateur');
-    Route::get('deleteUtilisateur','AuthController@deleteUtilisateur');
 
 });
+
+// Route::group([
+
+//     'namespace' => 'App\Http\Controllers',
+
+// ], function ($router) {
+    
+  
+
+// });
+
+Route::get('getUtilisateurById/{id}','App\Http\Controllers\Controller@getUtilisateurById');
+Route::put('updateUtilisateur/{id}','App\Http\Controllers\Controller@updateUtilisateur');
+Route::delete('deleteUtilisateur/{id}','App\Http\Controllers\Controller@deleteUtilisateur');
+
+Route::group([
+
+    'namespace' => 'App\Http\Controllers',
+
+], function ($router) {
+
+    Route::get('getProspect' ,'ProspectController@getProspect');
+    Route::get('getProspectById/{id}','ProspectController@getProspectById');
+    Route::post('addProspect','ProspectController@addProspect');
+    Route::put('updateProspect/{id}','ProspectController@updateProspect');
+    Route::delete('deleteProspect/{id}','ProspectController@deleteProspect');
+
+});
+
+
+
+
+

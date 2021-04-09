@@ -13,7 +13,7 @@ class CreateTableProspect extends Migration
      */
     public function up()
     {
-        Schema::create('prospect', function (Blueprint $table) {
+        Schema::create('prospects', function (Blueprint $table) {
             $table->id();
             $table->string('codeP');
             $table->string('raisonsocialeP');
