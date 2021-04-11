@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 use Illuminate\Auth\Access\AuthorizationException;
-use App\User;
+use App\Models\User;
 
 
 class VerificationController extends Controller

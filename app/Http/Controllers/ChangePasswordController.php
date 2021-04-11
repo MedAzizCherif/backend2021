@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\ChangePasswordRequest;
+use App\Http\Requests\ChangePaswordRequest;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\HttpFoundation\Response;
-use App\User;
+use App\Models\User;
 
 class ChangePasswordController extends Controller
 {
-    public function process(ChangePasswordRequest $request)
+    public function process(ChangePaswordRequest $request)
     {
         return $this->getPasswordResetTableRow($request)->count()> 0 ? $this->changePassword($request) : $this->tokenNotFoundResponse();
     }
