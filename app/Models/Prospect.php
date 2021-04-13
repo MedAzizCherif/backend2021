@@ -30,6 +30,7 @@ class Prospect extends Model
         'responsableP',
         'telephonefixeP',
         'telephonemobileP',
+        'telecopieP',
         'sitewebP',
         'adresseelectroniqueP',
         'monnaieP',

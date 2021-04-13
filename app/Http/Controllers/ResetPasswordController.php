@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\ResetPasswordMail;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class ResetPasswordController extends Controller
 {
@@ -36,7 +37,7 @@ class ResetPasswordController extends Controller
             return $oldToken->token;
         }
 
-        $token = str_random(60);
+        $token = Str::random(60);
         $this->saveToken($token, $email);
         return $token;
     }

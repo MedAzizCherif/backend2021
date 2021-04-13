@@ -78,6 +78,32 @@ Route::group([
 });
 
 
+Route::group([
+
+    'namespace' => 'App\Http\Controllers',
+
+], function ($router) {
+
+    Route::get('getMonnaie' ,'MonnaieController@getMonnaie');
+    Route::get('getMonnaieById/{id}','MonnaieController@getMonnaieById');
+    Route::post('addMonnaie','MonnaieController@addMonnaie');
+    Route::put('updateMonnaie/{id}','MonnaieController@updateMonnaie');
+    Route::delete('deleteMonnaie/{id}','MonnaieController@deleteMonnaie');
+
+});
 
 
+Route::group([
+
+    'namespace' => 'App\Http\Controllers',
+
+], function ($router) {
+
+    Route::get('getRegime' ,'RegimeController@getRegime');
+    Route::get('getRegimeById/{id}','RegimeController@getRegimeById');
+    Route::post('addRegime','RegimeController@addRegime');
+    Route::put('updateRegime/{id}','RegimeController@updateRegime');
+    Route::delete('deleteRegime/{id}','RegimeController@deleteRegime');
+
+});
 

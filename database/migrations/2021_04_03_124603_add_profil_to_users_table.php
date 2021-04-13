@@ -16,6 +16,10 @@ class AddProfilToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('profil')->after('password');
         });
+
+        // Schema::table('prospects', function (Blueprint $table) {
+        //     $table->foreign('monnaies_monnaiep')->references('monnaiep')->on('monnaies')->onUpdate('cascade')->onDelete('cascade');
+        // });
     }
 
     /**
@@ -25,6 +29,9 @@ class AddProfilToUsersTable extends Migration
      */
     public function down()
     {
+        // Schema::table('prospects', function (Blueprint $table) {
+        //     $table->dropForeign('prospects_monnaies_monnaiep_foreign');
+        // });
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('profil');
         });

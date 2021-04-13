@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMonnaieTable extends Migration
+class CreateRegimesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateMonnaieTable extends Migration
      */
     public function up()
     {
-        Schema::create('monnaie', function (Blueprint $table) {
+        Schema::create('regimes', function (Blueprint $table) {
             $table->id();
-            
+            $table->string('type_regime');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateMonnaieTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('monnaie');
+        Schema::dropIfExists('regimes');
     }
 }

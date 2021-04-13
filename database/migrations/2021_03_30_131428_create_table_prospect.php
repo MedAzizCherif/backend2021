@@ -36,8 +36,11 @@ class CreateTableProspect extends Migration
             $table->string('telecopieP');
             $table->string('sitewebP');
             $table->string('adresseelectroniqueP');
-            $table->enum('monnaieP', array('TND', 'DOLLAR','EURO'));
+            // $table->string('monnaiep');
+            // $table->foreignId('monnaie_Id')->references('id')->on('monnaies')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
+
+            
         });
     }
 
@@ -48,6 +51,12 @@ class CreateTableProspect extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('prospect');
+        // Schema::table('prospects', function (Blueprint $table) {
+        //     $table->dropforeign('prospects_monnaie_id_foreign');
+        // });
+
+        Schema::dropIfExists('prospects');
+
+      
     }
 }
