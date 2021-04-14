@@ -31,6 +31,7 @@ Route::get('/user', function (Request $request) {
 
 // Route::get('/email/verify/{id}/{hash}', 'App\Http\Controllers\VerificationController@verify')->name('verification.verify');
 
+//auth User with all functionalities
 Route::group([
 
     'middleware' => 'api',
@@ -49,20 +50,12 @@ Route::group([
 
 });
 
-// Route::group([
-
-//     'namespace' => 'App\Http\Controllers',
-
-// ], function ($router) {
-    
-  
-
-// });
+//rud User
 
 Route::get('getUtilisateurById/{id}','App\Http\Controllers\Controller@getUtilisateurById');
 Route::put('updateUtilisateur/{id}','App\Http\Controllers\Controller@updateUtilisateur');
 Route::delete('deleteUtilisateur/{id}','App\Http\Controllers\Controller@deleteUtilisateur');
-
+//crud Prospect
 Route::group([
 
     'namespace' => 'App\Http\Controllers',
@@ -77,7 +70,7 @@ Route::group([
 
 });
 
-
+//crud Monnaie
 Route::group([
 
     'namespace' => 'App\Http\Controllers',
@@ -92,7 +85,7 @@ Route::group([
 
 });
 
-
+//crud Regime
 Route::group([
 
     'namespace' => 'App\Http\Controllers',
@@ -107,3 +100,142 @@ Route::group([
 
 });
 
+//crud Tva
+Route::group([
+
+    'namespace' => 'App\Http\Controllers',
+
+], function ($router) {
+
+    Route::get('getTva' ,'TvaController@getTva');
+    Route::get('getTvaById/{id}','TvaController@getTvaById');
+    Route::post('addTva','TvaController@addTva');
+    Route::put('updateTva/{id}','TvaController@updateTva');
+    Route::delete('deleteTva/{id}','TvaController@deleteTva');
+
+});
+
+
+//crud Delegation
+Route::group([
+
+    'namespace' => 'App\Http\Controllers',
+
+], function ($router) {
+
+    Route::get('getDelegation' ,'DelegationController@getDelegation');
+    Route::get('getDelegationById/{id}','DelegationController@getDelegationById');
+    Route::post('addDelegation','DelegationController@addDelegation');
+    Route::put('updateDelegation/{id}','DelegationController@updateDelegation');
+    Route::delete('deleteDelegation/{id}','DelegationController@deleteDelegation');
+
+});
+
+
+//crud Pays
+Route::group([
+
+    'namespace' => 'App\Http\Controllers',
+
+], function ($router) {
+
+    Route::get('getPays' ,'PaysController@getPays');
+    Route::get('getPaysById/{id}','PaysController@getPaysById');
+    Route::post('addPays','PaysController@addPays');
+    Route::put('updatePays/{id}','PaysController@updatePays');
+    Route::delete('deletePays/{id}','PaysController@deletePays');
+
+});
+
+//crud Societe
+Route::group([
+
+    'namespace' => 'App\Http\Controllers',
+
+], function ($router) {
+
+    Route::get('getSociete' ,'SocieteController@getSociete');
+    Route::get('getSocieteById/{id}','SocieteController@getSocieteById');
+    Route::post('addSociete','SocieteController@addSociete');
+    Route::put('updateSociete/{id}','SocieteController@updateSociete');
+    Route::delete('deleteSociete/{id}','SocieteController@deleteSociete');
+
+});
+
+//crud Formejuridique
+Route::group([
+
+    'namespace' => 'App\Http\Controllers',
+
+], function ($router) {
+
+    Route::get('getFormejuridique' ,'FormejuridiqueController@getFormejuridique');
+    Route::get('getFormejuridiqueById/{id}','FormejuridiqueController@getFormejuridiqueById');
+    Route::post('addFormejuridique','FormejuridiqueController@addFormejuridique');
+    Route::put('updateFormejuridique/{id}','FormejuridiqueController@updateFormejuridique');
+    Route::delete('deleteFormejuridique/{id}','FormejuridiqueController@deleteFormejuridique');
+
+});
+
+
+//crud Secteur
+Route::group([
+
+    'namespace' => 'App\Http\Controllers',
+
+], function ($router) {
+
+    Route::get('getSecteur' ,'SecteurController@getSecteur');
+    Route::get('getSecteurById/{id}','SecteurController@getSecteurById');
+    Route::post('addSecteur','SecteurController@addSecteur');
+    Route::put('updateSecteur/{id}','SecteurController@updateSecteur');
+    Route::delete('deleteSecteur/{id}','SecteurController@deleteSecteur');
+
+});
+
+
+//crud Intervention
+Route::group([
+
+    'namespace' => 'App\Http\Controllers',
+
+], function ($router) {
+
+    Route::get('getIntervention' ,'InterventionController@getIntervention');
+    Route::get('getInterventionById/{id}','InterventionController@getInterventionById');
+    Route::post('addIntervention','InterventionController@addIntervention');
+    Route::put('updateIntervention/{id}','InterventionController@updateIntervention');
+    Route::delete('deleteIntervention/{id}','InterventionController@deleteIntervention');
+
+});
+
+//crud Presentation
+Route::group([
+
+    'namespace' => 'App\Http\Controllers',
+
+], function ($router) {
+
+    Route::get('getPresentation' ,'PresentationController@getPresentation');
+    Route::get('getPresentationById/{id}','PresentationController@getPresentationById');
+    Route::post('addPresentation','PresentationController@addPresentation');
+    Route::put('updatePresentation/{id}','PresentationController@updatePresentation');
+    Route::delete('deletePresentation/{id}','PresentationController@deletePresentation');
+
+});
+
+
+//crud Produit
+Route::group([
+
+    'namespace' => 'App\Http\Controllers',
+
+], function ($router) {
+
+    Route::get('getProduit' ,'ProduitController@getProduit');
+    Route::get('getProduitById/{id}','ProduitController@getProduitById');
+    Route::post('addProduit','ProduitController@addProduit');
+    Route::put('updateProduit/{id}','ProduitController@updateProduit');
+    Route::delete('deleteProduit/{id}','ProduitController@deleteProduit');
+
+});
