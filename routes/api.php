@@ -52,6 +52,7 @@ Route::group([
 
 //rud User
 
+Route::get('getUser/{id}','App\Http\Controllers\Controller@getUser');
 Route::get('getUtilisateurById/{id}','App\Http\Controllers\Controller@getUtilisateurById');
 Route::put('updateUtilisateur/{id}','App\Http\Controllers\Controller@updateUtilisateur');
 Route::delete('deleteUtilisateur/{id}','App\Http\Controllers\Controller@deleteUtilisateur');
@@ -237,5 +238,20 @@ Route::group([
     Route::post('addProduit','ProduitController@addProduit');
     Route::put('updateProduit/{id}','ProduitController@updateProduit');
     Route::delete('deleteProduit/{id}','ProduitController@deleteProduit');
+
+});
+
+//crud Offre
+Route::group([
+
+    'namespace' => 'App\Http\Controllers',
+
+], function ($router) {
+
+    Route::get('getOffre' ,'OffreController@getOffre');
+    Route::get('getOffreById/{id}','OffreController@getOffreById');
+    Route::post('addOffre','OffreController@addOffre');
+    Route::put('updateOffre/{id}','OffreController@updateOffre');
+    Route::delete('deleteOffre/{id}','OffreController@deleteOffre');
 
 });

@@ -14,6 +14,9 @@ use App\Models\User;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    public function getUser(){
+        return response()->json(Offre::all(), 200);
+     }
 
     public function getUtilisateurById($id) {
         $User = User::find($id);
