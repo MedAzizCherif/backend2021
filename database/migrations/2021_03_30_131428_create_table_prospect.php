@@ -17,27 +17,25 @@ class CreateTableProspect extends Migration
             $table->id();
             $table->string('codeP');
             $table->string('raisonsocialeP');
-            $table->string('typeP');
+            //$table->string('typeP');
             $table->string('etatP');
             $table->string('adresseP');
             $table->string('codepostalP');
             $table->string('villeP');
-            $table->string('paysP');
+            //$table->string('paysP');
             $table->string('matriculefiscaleP');
             $table->string('registrecommerceP');
-            $table->string('regimeP');
-            $table->string('formejuridiqueP');
-            $table->string('secteurP');
+            //$table->string('regimeP');
+            //$table->string('formejuridiqueP');
+            //$table->string('secteurP');
             $table->string('activiteP');
-            $table->string('tvaP');
+            //$table->string('tvaP');
             $table->string('responsableP');
             $table->integer('telephonefixeP');
             $table->integer('telephonemobileP');
             $table->string('telecopieP');
             $table->string('sitewebP');
             $table->string('adresseelectroniqueP');
-            // $table->string('monnaiep');
-            // $table->foreignId('monnaie_Id')->references('id')->on('monnaies')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
 
             
@@ -51,9 +49,6 @@ class CreateTableProspect extends Migration
      */
     public function down()
     {
-        // Schema::table('prospects', function (Blueprint $table) {
-        //     $table->dropforeign('prospects_monnaie_id_foreign');
-        // });
 
         Schema::dropIfExists('prospects');
 
