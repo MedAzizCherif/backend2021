@@ -36,6 +36,12 @@ class Prospect extends Model
         'monnaieP',
         // 'updated_at',
         // 'created_at',
+        'pay_id',
+        'societe_id',
+        'regime_id',
+        'tva_id',
+        'formejuridique_id',
+        'secteur_id',
     ];
 
 }

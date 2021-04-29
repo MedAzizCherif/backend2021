@@ -17,7 +17,7 @@ class CreateTableProspect extends Migration
             $table->id();
             $table->string('codeP');
             $table->string('raisonsocialeP');
-            //$table->string('typeP');
+            $table->string('typeP');
             $table->string('etatP');
             $table->string('adresseP');
             $table->string('codepostalP');

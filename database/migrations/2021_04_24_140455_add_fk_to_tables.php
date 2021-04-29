@@ -39,6 +39,18 @@ class AddFkToTables extends Migration
     {
         Schema::table('offres', function (Blueprint $table) {
             $table->dropForeign('offres_produit_id_foreign');
+            $table->dropForeign('offres_monnaie_id_foreign');
+            $table->dropForeign('offres_presentation_id_foreign');
+            $table->dropForeign('offres_intervention_id_foreign');
+        });
+
+        Schema::table('prospects', function (Blueprint $table) {
+            $table->dropForeign('prospects_pay_id_foreign');
+            $table->dropForeign('prospects_societe_id_foreign');
+            $table->dropForeign('prospects_regime_id_foreign');
+            $table->dropForeign('prospects_tva_id_foreign');
+            $table->dropForeign('prospects_formejuridique_id_foreign');
+            $table->dropForeign('prospects_secteur_id_foreign');
         });
     }
 }

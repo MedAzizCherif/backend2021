@@ -10,6 +10,10 @@ class Offre extends Model
     use HasFactory;
     protected $table = "offres";
     protected $fillable = [
+        'produit_id',
+        'monnaie_id',
+        'presentation_id',
+        'intervention_id',
         
     ];
 }
