@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Secteur;
 class SecteurController extends Controller
 {
+    public function indexSecteur(){
+        $propects = Prospect::with('secteur')->get();
+    }
     
     public function getSecteur(){
         return response()->json(Secteur::all(), 200);

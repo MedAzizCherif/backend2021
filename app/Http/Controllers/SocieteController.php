@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\Societe;
 class SocieteController extends Controller
 {
-    
+    public function indexSociete(){
+        $propects = Prospect::with('societe')->get();
+    }
+
     public function getSociete(){
         return response()->json(Societe::all(), 200);
      }

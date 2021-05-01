@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pays;
 class PaysController extends Controller
-{
-    
+{ 
+    public function indexPays(){
+    $propects = Prospect::with('pay')->get();
+}
+  
     public function getPays(){
         return response()->json(Pays::all(), 200);
      }

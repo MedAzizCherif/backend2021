@@ -78,6 +78,7 @@ Route::group([
 
 ], function ($router) {
 
+    Route::get('indexMonnaie' ,'MonnaieController@indexMonnaie');
     Route::get('getMonnaie' ,'MonnaieController@getMonnaie');
     Route::get('getMonnaieById/{id}','MonnaieController@getMonnaieById');
     Route::post('addMonnaie','MonnaieController@addMonnaie');
@@ -93,6 +94,7 @@ Route::group([
 
 ], function ($router) {
 
+    Route::get('indexRegime' ,'RegimeController@indexRegime');
     Route::get('getRegime' ,'RegimeController@getRegime');
     Route::get('getRegimeById/{id}','RegimeController@getRegimeById');
     Route::post('addRegime','RegimeController@addRegime');
@@ -108,6 +110,7 @@ Route::group([
 
 ], function ($router) {
 
+    Route::get('indexTva' ,'TvaController@indexTva');
     Route::get('getTva' ,'TvaController@getTva');
     Route::get('getTvaById/{id}','TvaController@getTvaById');
     Route::post('addTva','TvaController@addTva');
@@ -124,6 +127,7 @@ Route::group([
 
 ], function ($router) {
 
+    Route::get('indexDelegation' ,'DelegationController@indexDelegation');
     Route::get('getDelegation' ,'DelegationController@getDelegation');
     Route::get('getDelegationById/{id}','DelegationController@getDelegationById');
     Route::post('addDelegation','DelegationController@addDelegation');
@@ -140,6 +144,7 @@ Route::group([
 
 ], function ($router) {
 
+    Route::get('indexPays' ,'PaysController@indexPays');
     Route::get('getPays' ,'PaysController@getPays');
     Route::get('getPaysById/{id}','PaysController@getPaysById');
     Route::post('addPays','PaysController@addPays');
@@ -155,6 +160,7 @@ Route::group([
 
 ], function ($router) {
 
+    Route::get('indexSociete' ,'SocieteController@indexSociete');
     Route::get('getSociete' ,'SocieteController@getSociete');
     Route::get('getSocieteById/{id}','SocieteController@getSocieteById');
     Route::post('addSociete','SocieteController@addSociete');
@@ -170,6 +176,7 @@ Route::group([
 
 ], function ($router) {
 
+    Route::get('indexFormejuridique' ,'FormejuridiqueController@indexFormejuridique');
     Route::get('getFormejuridique' ,'FormejuridiqueController@getFormejuridique');
     Route::get('getFormejuridiqueById/{id}','FormejuridiqueController@getFormejuridiqueById');
     Route::post('addFormejuridique','FormejuridiqueController@addFormejuridique');
@@ -186,6 +193,7 @@ Route::group([
 
 ], function ($router) {
 
+    Route::get('indexSecteur' ,'SecteurController@indexSecteur');
     Route::get('getSecteur' ,'SecteurController@getSecteur');
     Route::get('getSecteurById/{id}','SecteurController@getSecteurById');
     Route::post('addSecteur','SecteurController@addSecteur');
@@ -202,6 +210,7 @@ Route::group([
 
 ], function ($router) {
 
+    Route::get('indexIntervention' ,'InterventionController@indexIntervention');
     Route::get('getIntervention' ,'InterventionController@getIntervention');
     Route::get('getInterventionById/{id}','InterventionController@getInterventionById');
     Route::post('addIntervention','InterventionController@addIntervention');
@@ -217,6 +226,7 @@ Route::group([
 
 ], function ($router) {
 
+    Route::get('indexPresentation' ,'PresentationController@indexPresentation');
     Route::get('getPresentation' ,'PresentationController@getPresentation');
     Route::get('getPresentationById/{id}','PresentationController@getPresentationById');
     Route::post('addPresentation','PresentationController@addPresentation');
@@ -233,6 +243,7 @@ Route::group([
 
 ], function ($router) {
 
+    Route::get('indexProduit' ,'ProduitController@indexProduit');
     Route::get('getProduit' ,'ProduitController@getProduit');
     Route::get('getProduitById/{id}','ProduitController@getProduitById');
     Route::post('addProduit','ProduitController@addProduit');

@@ -7,7 +7,10 @@ use App\Models\Regime;
 
 class RegimeController extends Controller
 {
-    
+    public function indexRegime(){
+        $propects = Prospect::with('regime')->get();
+    }
+
     public function getRegime(){
         return response()->json(Regime::all(), 200);
      }

@@ -7,7 +7,10 @@ use App\Models\Presentation;
 
 class PresentationController extends Controller
 {
-    
+    public function indexPresentation(){
+        $offres = Offre::with('presentation')->get();
+    }
+
     public function getPresentation(){
         return response()->json(Presentation::all(), 200);
      }

@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Tva;
 class TvaController extends Controller
 {
-    
+    public function indexTva(){
+        $propects = Prospect::with('tva')->get();
+    }
     public function getTva(){
         return response()->json(Tva::all(), 200);
      }

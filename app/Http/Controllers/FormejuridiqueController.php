@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Formejuridique;
 class FormejuridiqueController extends Controller
 {
+    public function indexFormejuridique(){
+        $propects = Prospect::with('formejuridique')->get();
+    }
     
     public function getFormejuridique(){
         return response()->json(Formejuridique::all(), 200);

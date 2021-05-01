@@ -7,10 +7,13 @@ use App\Models\Monnaie;
 
 class MonnaieController extends Controller
 {
-    
+        public function indexMonnaie(){
+            $propects = Prospect::with('monnaie')->get();
+        }
+        
         public function getMonnaie(){
             return response()->json(Monnaie::all(), 200);
-         }
+        }
         
         public function getMonnaieById($id) {
             $Monnaie = Monnaie::find($id);

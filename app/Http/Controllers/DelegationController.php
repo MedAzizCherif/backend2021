@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\Delegation;
 class DelegationController extends Controller
 {
-    
+    public function indexDelegation(){
+        $propects = Prospect::with('Delegation')->get();
+    }
+
     public function getDelegation(){
         return response()->json(Delegation::all(), 200);
      }

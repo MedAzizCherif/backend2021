@@ -7,7 +7,10 @@ use App\Models\Produit;
 
 class ProduitController extends Controller
 {
-    
+    public function indexProduit(){
+        $offres = Offre::with('produit')->get();
+    }
+
     public function getProduit(){
         return response()->json(Produit::all(), 200);
      }

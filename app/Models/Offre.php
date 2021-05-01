@@ -11,9 +11,23 @@ class Offre extends Model
     protected $table = "offres";
     protected $fillable = [
         'produit_id',
-        'monnaie_id',
         'presentation_id',
         'intervention_id',
         
     ];
+    public function produit()
+    {
+        return $this->belongsTo(Produits::class, 'produit_id', 'id');
+    }
+
+    public function presentation()
+    {
+        return $this->belongsTo(Presentation::class, 'presentation_id', 'id');
+    }
+
+    public function intervention()
+    {
+        return $this->belongsTo(Intervention::class, 'intervention_id', 'id');
+    }
+
 }

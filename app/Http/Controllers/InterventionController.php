@@ -7,7 +7,10 @@ use App\Models\Intervention;
 
 class InterventionController extends Controller
 {
-    
+    public function indexIntervention(){
+        $offres = Offre::with('intervention')->get();
+    }
+
     public function getIntervention(){
         return response()->json(Intervention::all(), 200);
      }
